@@ -1,8 +1,8 @@
+/* Diseñar un programa que pida al usuario su nombre, apellidos y edad y lo muestre por consola.*/
+
 //package unidad1;
 
 import java.util.Scanner;
-
-/* Diseñar un programa que pida al usuario su nombre, apellidos y edad y lo muestre por consola.*/
 
 public class A01_PedirMostrar {
     public static void main(String[] args) {
