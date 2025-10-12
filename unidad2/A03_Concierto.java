@@ -11,6 +11,7 @@ import java.util.Scanner;
 public class A03_Concierto {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
+        double descuento;
 
         System.out.print("Introduce el aforo máximo del local: ");
         int aforo = sc.nextInt();
@@ -21,19 +22,22 @@ public class A03_Concierto {
         System.out.print("Introduce número de entradas vendidas: ");
         int entradas = sc.nextInt();
 
+        System.out.printf("El aforo del local tiene %d butacas, se han venidido %d entradas, y el precio de la entrada es de %.2f euros.\n", aforo, entradas, precio);
+        System.out.println("");
+
         double recaudacion = precio * entradas;
 
         if (entradas < aforo * 0.20 ) {
-            System.out.print("Lo sentimos. El concierto se cancela.");
+            System.out.print("Lo sentimos. El concierto se cancela.\n");
             recaudacion = 0;
         } else if (entradas < aforo * 0.50 /*&& entradas > aforo * 0.20*/) {
-            System.out.print("Se realiza un descuento del 25% por entrada.");
-            recaudacion = entradas * (precio * 0.25)  ;
+
+            descuento = precio * 0.25;
+            recaudacion = entradas + descuento;
+            System.out.printf("Enhorabuena, tienes un descuento %.2f euros en cada entrada.\n", descuento);
         }
 
-
-
-        System.out.printf("\nLa recaudación de este concierto es de %.2f euros.", recaudacion);
-
+        System.out.printf("\n**La recaudación de este concierto es de %.2f euros.**\n", recaudacion);
+        System.out.println("");
     }
 }

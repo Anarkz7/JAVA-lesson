@@ -27,7 +27,7 @@ public class A03_Frutero {
 
         //comprueba las tres variables usadas hasta ahora, semestre 1 y 2 más el total de manzanas
         System.out.printf("Si en el primer semestre vendiste %.2f kg y en el segundo semenstre vendiste %.2f kg, en total vendiste %.2f kilos de manzanas.\n", kgmanzanas1, kgmanzanas2, totalkgmanzanas);
-        System.out.printf("Si el kilo de manzanas cuesta %.2f euros, el total de manzanas cuesta %.2f euros.\n", precioManzanas, totalkgmanzanas);
+        System.out.printf("Si el kilo de manzanas cuesta %.2f euros, el total de manzanas cuesta %.2f euros.\n", precioManzanas, precioManzanas * totalkgmanzanas);
         
         //muestra un espacio por consola para separar y organizar la secuencia de ejecución.
         System.out.println();
@@ -41,10 +41,13 @@ public class A03_Frutero {
         double kgperas2 = sc.nextDouble();
         double totalkgperas = kgperas1 + kgperas2;
         System.out.printf("Si en el primer semestre vendiste %.2f kg y en el segundo semenstre vendiste %.2f kg, en total vendiste %.2f kilos de peras.\n", kgperas1, kgperas2, totalkgperas);
-        System.out.printf("Si el kilo de peras cuesta %.2f euros, el total de peras cuesta %.2f euros.\n", precioPeras, totalkgperas);
+        System.out.printf("Si el kilo de peras cuesta %.2f euros, el total de peras cuesta %.2f euros.\n", precioPeras, precioPeras * totalkgperas );
         System.out.println();
 
+        double beneficiosManzanas = precioManzanas * totalkgmanzanas;
+        double beneficiosPeras = precioPeras * totalkgperas;
+
         //comprueba y muestra el cálculo total haciendo la suma y multiplación en la misma línea formateada, ahorrando líneas y creación de más variables.
-        System.out.printf("Los beneficios anuales obtenidos sumando las ventas de todos los kilos son de %.2f euros.", (totalkgperas * precioPeras) + (totalkgmanzanas*precioManzanas));
+        System.out.printf("Los beneficios anuales obtenidos sumando las ventas de todos los kilos son de %.2f euros.", beneficiosManzanas + beneficiosPeras /*(totalkgperas * precioPeras) + (totalkgmanzanas*precioManzanas)*/);
     }
 }
