@@ -10,9 +10,13 @@ import java.util.Scanner;
 
 public class A03_Concierto {
     public static void main(String[] args) {
+        //Crea una clase de tipo Scanner llamada sc para poder usarla cada vez que queramos guardar valores introducidos por consola.
         Scanner sc = new Scanner(System.in);
-        double descuento;
+        
+        //Inicia las variables necesarias para todo el código para poder operar con ellas más adelante.
+        double descuento = 0;
 
+        //Solicita y guarda el aforo, el precio de cada entrada, y el número de entradas vendidas.
         System.out.print("Introduce el aforo máximo del local: ");
         int aforo = sc.nextInt();
 
@@ -20,24 +24,17 @@ public class A03_Concierto {
         double precio = sc.nextDouble();
 
         System.out.print("Introduce número de entradas vendidas: ");
-        int entradas = sc.nextInt();
+        int entradasVendidas = sc.nextInt();
 
         System.out.printf("El aforo del local tiene %d butacas, se han venidido %d entradas, y el precio de la entrada es de %.2f euros.\n", aforo, entradas, precio);
         System.out.println("");
 
-        double recaudacion = precio * entradas;
+        //Calcula el valor del descuento que se aplica a cada entrada con el descuento ya aplicado.
+        descuento = precio * 0.25;
+        System.out.printf("Enhorabuena, tienes un descuento de %.2f euros en cada entrada.", descuento);
 
-        if (entradas < aforo * 0.20 ) {
-            System.out.print("Lo sentimos. El concierto se cancela.\n");
-            recaudacion = 0;
-        } else if (entradas < aforo * 0.50 /*&& entradas > aforo * 0.20*/) {
+        //Calcula precio final que tendrá cada entrada
+        
 
-            descuento = precio * 0.25;
-            recaudacion = entradas + descuento;
-            System.out.printf("Enhorabuena, tienes un descuento %.2f euros en cada entrada.\n", descuento);
-        }
-
-        System.out.printf("\n**La recaudación de este concierto es de %.2f euros.**\n", recaudacion);
-        System.out.println("");
     }
 }
