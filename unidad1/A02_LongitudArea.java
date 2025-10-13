@@ -9,14 +9,14 @@ import java.util.Scanner;
 public class A02_LongitudArea {
 
     public static void main(String[] args) {
-        //crea una variable de tipo esaner para llamarla en cualquier momento del main.
+        //crea una variable de tipo escaner para llamarla en cualquier momento del main.
         Scanner sc = new Scanner(System.in);
 
         //solicita un radio y lo guardamos en un double llamado "radio".
         System.out.printf("\nDime cuál es el radio: ");
         double radio = sc.nextDouble();
 
-        //crea la variable longitud para hacer el cálculo longitud llamándo a la clase math par coger el número PI.
+        //crea la variable longitud para hacer el cálculo longitud llamándo a la clase math para coger el número PI.
         double longitud = 2 * Math.PI * radio;
 
         //crea la variable "area" para hacer el cálculo del área, llamando a la clase math para PI y la clase .pow para hacer un elevado.

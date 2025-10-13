@@ -34,7 +34,5 @@ public class A03_Concierto {
         System.out.printf("Enhorabuena, tienes un descuento de %.2f euros en cada entrada.", descuento);
 
         //Calcula precio final que tendrá cada entrada
-        
-
     }
 }
