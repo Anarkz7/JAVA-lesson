@@ -13,26 +13,39 @@ public class A03_Concierto {
         //Crea una clase de tipo Scanner llamada sc para poder usarla cada vez que queramos guardar valores introducidos por consola.
         Scanner sc = new Scanner(System.in);
         
-        //Inicia las variables necesarias para todo el código para poder operar con ellas más adelante.
+        //Declara las variables necesarias para todo el código para poder operar con ellas más adelante.
+        int aforo, entradas;
+        double precio;
         double descuento = 0;
+        double recaudacion = 0;
 
         //Solicita y guarda el aforo, el precio de cada entrada, y el número de entradas vendidas.
-        System.out.print("Introduce el aforo máximo del local: ");
-        int aforo = sc.nextInt();
-
-        System.out.print("Introduce el precio de la entrada: ");
-        double precio = sc.nextDouble();
-
-        System.out.print("Introduce número de entradas vendidas: ");
-        int entradasVendidas = sc.nextInt();
-
-        System.out.printf("El aforo del local tiene %d butacas, se han venidido %d entradas, y el precio de la entrada es de %.2f euros.\n", aforo, entradas, precio);
+        System.out.println("----------- Calculadora de Recaudación del Concierto ---------");
         System.out.println("");
 
-        //Calcula el valor del descuento que se aplica a cada entrada con el descuento ya aplicado.
-        descuento = precio * 0.25;
-        System.out.printf("Enhorabuena, tienes un descuento de %.2f euros en cada entrada.", descuento);
+        System.out.print("Introduce el aforo máximo del local: ");
+        aforo = sc.nextInt();
 
-        //Calcula precio final que tendrá cada entrada
+        System.out.print("Introduce el precio de la entrada (demiales con ','): ");
+        precio = sc.nextDouble();
+
+        System.out.print("Introduce número de entradas vendidas: ");
+        entradas = sc.nextInt();
+
+        System.out.printf("\nEl aforo del local es de %d butacas, se han venidido %d entradas y el precio de la entrada es de %.2f euros.\n", aforo, entradas, precio);
+        System.out.println("-----------------------------------------------------------------------");
+
+        //Comienza el bucle if con la condición más restrictiva.
+        if (entradas < aforo * 0.20) {
+            recaudacion = 0;
+            System.out.printf("Lo sentimos. El concierto está cancelado.\nLa racaudación es: %.2f euros.", recaudacion);
+        } else if (entradas < aforo * 0.50) {
+            descuento = precio - (precio * 0.25);
+            recaudacion = precio * entradas;
+            System.out.printf("INFO: Cada entrada tiene un descuento de %.2f euros.\nLa recaudación es de %.2f euros.", descuento, recaudacion);
+        } else {
+            recaudacion = precio * entradas;
+            System.out.printf("INFO: Venta normal sin descuentos. \nLa recaudación es de %.2f euros.", recaudacion);
+        }
     }
 }
