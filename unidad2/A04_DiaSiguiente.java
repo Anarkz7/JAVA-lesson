@@ -5,36 +5,66 @@ package unidad2;
 
 import java.util.Scanner;
 
-public class A04_DiaSiguiente {
-    public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
+/**
+ * Ejercicio 4: Solicita una fecha (día, mes, año) y muestra
+ * la fecha correspondiente al día siguiente.
+ *
+ * @author Ana
+ */
 
+public class A04_DiaSiguiente {
+     /**
+     * Método principal que ejecuta el programa.
+     * Pide los datos por consola, calcula la fecha del día siguiente
+     * y muestra el resultado.
+     *
+     * @param args Argumentos de la línea de comandos (no se utilizan).
+     */
+    public static void main(String[] args) {
+        // --- 1. PREPARACIÓN DE RECURSOS Y VARIABLES ---
+        Scanner sc = new Scanner(System.in);
+        int day, month, year;
+        int diasDelMes; // Esta variable es clave para el contador.
+
+        // --- 2. ENTRADA DE DATOS DEL USUARIO ---
         System.out.print("Introduce el día: ");
-        int day = sc.nextInt();
+        day = sc.nextInt();
 
         System.out.print("Introduce el número del mes: ");
-        int month = sc.nextInt();
+        month = sc.nextInt();
 
         System.out.print("Introduce el año: ");
-        int year = sc.nextInt();
+        year = sc.nextInt();
 
-        int nextDay = day ++;
+        sc.close();
+
+        // --- 3. LÓGICA PARA DETERMINAR DÍAS DEL MES ---
+        switch (month) {
+            case 2 -> diasDelMes = 28;
+            case 4, 6, 9, 11 -> diasDelMes = 30;
+            default -> {
+                diasDelMes = 31;
+            }
+        }
+
+        // --- 4. COMPRUEBA LÓGICA DÍA SIGUIENTE ---
+
+        int nextDay = day;
         int nextMonth = month;
         int nextYear = year;
 
-        nextDay = day > 30 ? nextDay ++ : 
-        nextMonth = month > 12 ? nextMonth ++ : nextMonth = month;
+        if (day == diasDelMes) {
+            nextDay = 1;
+            nextMonth = month + 1;
 
-        /*
-        monthDays  = switch(month){
-            case -> 2;
-            case ->
-            case ->
-            default ->
+            if (nextMonth > 12 ) {
+            nextMonth = 1;
+            nextYear = year + 1;
+            }
 
-        } 
-        */
-
-        System.out.printf("El día siguiente de %d / %d / %d es %d / %d / %d.", day, month, year, nextDay, nextMonth, nextYear);
+        } else {
+            nextDay = day + 1; 
+        }
+        System.out.printf("\nEl día siguiente de %d/%d/%d es %d/%d/%d.", day, month, year, nextDay, nextMonth, nextYear);
     }
 }
