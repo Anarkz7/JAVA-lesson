@@ -9,17 +9,19 @@ package unidad2;
 import java.util.Scanner;
 
 public class A03_Concierto {
+    /**
+     * Método principal que ejecuta el programa.
+     * Pide los datos por consola, calcula la recaudación y muestra el resultado final.
+     **/
     public static void main(String[] args) {
         //Crea una clase de tipo Scanner llamada sc para poder usarla cada vez que queramos guardar valores introducidos por consola.
         Scanner sc = new Scanner(System.in);
         
-        //Declara las variables necesarias para todo el código para poder operar con ellas más adelante.
+        //--- 1. DECLARACIÓN DE VARIABLES ---
         int aforo, entradas;
-        double precio;
-        double descuento = 0;
-        double recaudacion = 0;
+        double precio, descuento, recaudacion;
 
-        //Solicita y guarda el aforo, el precio de cada entrada, y el número de entradas vendidas.
+        // --- 2. ENTRADA DE DATOS DEL USUARIO ---
         System.out.println("----------- Calculadora de Recaudación del Concierto ---------");
         System.out.println("");
 
@@ -32,20 +34,31 @@ public class A03_Concierto {
         System.out.print("Introduce número de entradas vendidas: ");
         entradas = sc.nextInt();
 
-        System.out.printf("\nEl aforo del local es de %d butacas, se han venidido %d entradas y el precio de la entrada es de %.2f euros.\n", aforo, entradas, precio);
+        // Se cierra el Scanner aquí, ya que no se necesitarán más datos de entrada.
+        sc.close();
+
+        System.out.printf("\nEl aforo del local es de %d butacas, se han vendido %d entradas y el precio de la entrada es de %.2f euros.\n", aforo, entradas, precio);
         System.out.println("-----------------------------------------------------------------------");
 
-        //Comienza el bucle if con la condición más restrictiva.
+        // --- 3. LÓGICA DEL PROGRAMA ---
+        // Se condicionan los 3 escenarios, del más restrictivo al más general.
         if (entradas < aforo * 0.20) {
+            // Escenario 1 : Se cancela el concierto si la venta de entradas no supera el 20%.
             recaudacion = 0;
-            System.out.printf("Lo sentimos. El concierto está cancelado.\nLa racaudación es: %.2f euros.", recaudacion);
+            System.out.println("Lo sentimos. El concierto está cancelado.\n");
         } else if (entradas < aforo * 0.50) {
-            descuento = precio - (precio * 0.25);
-            recaudacion = precio * entradas;
-            System.out.printf("INFO: Cada entrada tiene un descuento de %.2f euros.\nLa recaudación es de %.2f euros.", descuento, recaudacion);
+            // Escenario 2: Si la venta de entradas es mayor al 20% y menor del 50% se aplica el 25% descuento a cada entrada.
+            descuento = precio * 0.25;
+            double precioconDescuento = precio - descuento;
+            recaudacion = precioconDescuento * entradas;
+            System.out.printf("INFO: Cada entrada tiene un descuento de %.2f euros.\n", descuento);
         } else {
+            // Escenario 3: El resto de los casos.
             recaudacion = precio * entradas;
-            System.out.printf("INFO: Venta normal sin descuentos. \nLa recaudación es de %.2f euros.", recaudacion);
+            System.out.println("INFO: Venta normal sin descuentos.\n");
         }
+        // --- 4. SALIDA DEL RESULTADO FINAL ---
+        // Se muestra la recaudación calculada, formateada a dos decimales.
+        System.out.printf("\nLa recaudación es de %.2f euros.\n", recaudacion);
     }
 }
