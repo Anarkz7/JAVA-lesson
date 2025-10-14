@@ -8,11 +8,21 @@ package unidad2;
 
 import java.util.Scanner;
 
+/**
+ * Programa que calcula la recaudación final de un concierto basándose en
+ * el aforo del local, el precio de la entrada y el número de entradas vendidas.
+ * Aplica descuentos o cancela el evento según reglas de negocio predefinidas.
+ *
+ * @author Ana Arco
+ */
+
 public class A03_Concierto {
     /**
      * Método principal que ejecuta el programa.
      * Pide los datos por consola, calcula la recaudación y muestra el resultado final.
-     **/
+     *
+     * @param args Argumentos de la línea de comandos (no se utilizan en este programa).
+     */
     public static void main(String[] args) {
         //Crea una clase de tipo Scanner llamada sc para poder usarla cada vez que queramos guardar valores introducidos por consola.
         Scanner sc = new Scanner(System.in);
