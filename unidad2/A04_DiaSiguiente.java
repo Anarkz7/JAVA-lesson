@@ -6,10 +6,9 @@ package unidad2;
 import java.util.Scanner;
 
 /**
- * Ejercicio 4: Solicita una fecha (día, mes, año) y muestra
- * la fecha correspondiente al día siguiente.
+ * Ejercicio 4: Solicita una fecha (día, mes, año) y muestra la fecha correspondiente al día siguiente.
  *
- * @author Ana
+ * @author ANA ARCO IZQUIERDO
  */
 
 public class A04_DiaSiguiente {
