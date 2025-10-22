@@ -1,13 +1,39 @@
 /*Ejercicio 4.- Crear una aplicación que solicite al usuario una fecha (día, mes y año) y muestre la fecha 
-correspondiente al día siguiente. Febrero tiene 28 días.*/
+correspondiente al día siguiente. Febrero tiene 28 días.
 
-package unidad2;
+// 1. Preguntar al usuario por el día, mes y año.
+
+// 2. Averiguar cuántos días tiene el mes introducido.
+   Si el mes es 4, 6, 9, o 11 -> tiene 30 días.
+   Si el mes es 2 -> tiene 28 días.
+   Para cualquier otro mes -> tiene 31 días.
+
+// 3. Calcular la fecha del día siguiente.
+   Si el día introducido NO es el último día del mes:
+      día_siguiente = día + 1
+      mes_siguiente = mes (no cambia)
+      año_siguiente = año (no cambia)
+
+   Si SÍ es el último día del mes:
+      día_siguiente = 1
+      mes_siguiente = mes + 1
+
+      // Comprobar si este cambio de mes provoca un cambio de año.
+      Si mes_siguiente es mayor que 12:
+         mes_siguiente = 1
+         año_siguiente = año + 1
+      Si no,
+         año_siguiente = año (no cambia)
+
+// 4. Mostrar la fecha del día siguiente.*/
+
+package unidad2_condicionales;
 
 import java.util.Scanner;
 
 /**
  * Ejercicio 4: Solicita una fecha (día, mes, año) y muestra la fecha correspondiente al día siguiente.
- *
+ * 
  * @author ANA ARCO IZQUIERDO
  */
 
@@ -19,31 +45,37 @@ public class A04_DiaSiguiente {
      *
      * @param args Argumentos de la línea de comandos (no se utilizan).
      */
-    public static void main(String[] args) {
-        // --- 1. PREPARACIÓN DE RECURSOS Y VARIABLES ---
-        Scanner sc = new Scanner(System.in);
+    public static void main(String[] args) {        
         int day, month, year;
         int diasDelMes; // Esta variable es clave para el contador.
-
+        
+        // --- 1. PREPARACIÓN DE RECURSOS Y VARIABLES ---
+        Scanner sc = new Scanner(System.in);
+        
+        
         // --- 2. ENTRADA DE DATOS DEL USUARIO ---
         System.out.print("Introduce el día: ");
         day = sc.nextInt();
-
+            
         System.out.print("Introduce el número del mes: ");
         month = sc.nextInt();
-
+            
         System.out.print("Introduce el año: ");
         year = sc.nextInt();
-
-        sc.close();
+        
 
         // --- 3. LÓGICA PARA DETERMINAR DÍAS DEL MES ---
         switch (month) {
-            case 2 -> diasDelMes = 28;
-            case 4, 6, 9, 11 -> diasDelMes = 30;
-            default -> {
-                diasDelMes = 31;
-            }
+            case 2 : diasDelMes = 28;
+                break;
+            case 4:
+            case 6: 
+            case 9:
+            case 11: 
+                diasDelMes = 30;
+                break;
+            default : diasDelMes = 31;
+                break;
         }
 
         // --- 4. COMPRUEBA LÓGICA DÍA SIGUIENTE ---
