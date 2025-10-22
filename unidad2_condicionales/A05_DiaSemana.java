@@ -31,21 +31,26 @@ public class A05_DiaSemana {
         System.out.print("Introduce un número del 1 al 7: ");
         // Se lee el valor entero introducido y se guarda en la variable 'dia'.
         int dia = sc.nextInt();
+        String nombreDia;
         // --- 3. LÓGICA DE PROCESAMIENTO Y SALIDA ---
         // Se utiliza una estructura 'switch' para evaluar el valor de la variable 'dia'.
         // Esta estructura es ideal para comparaciones de igualdad con múltiples casos.
         // Se usa la sintaxis de flecha (->) introducida en Java 14, que es más concisa
         // y no requiere de la palabra 'break' pero sí un 'default'.
-            switch (dia) {
-                case 1 -> System.out.println("Lunes");
-                case 2 -> System.out.println("Martes");
-                case 3 -> System.out.println("Miércoles");
-                case 4 -> System.out.println("Jueves");
-                case 5 -> System.out.println("Viernes");
-                case 6 -> System.out.println("Sábado");
-                case 7 -> System.out.println("Domingo");
-                default -> System.out.println("Error: El número introducido no es válido.");
-            }
+            nombreDia = switch (dia) {
+                case 1 -> "El Lunes es el día 1.";
+                case 2 -> "El Martes es el día 2.";
+                case 3 -> "El Miércoles es el día 3.";
+                case 4 -> "El Jueves es el día 4";
+                case 5 -> "El Viernes es el día 5";
+                case 6 -> "El Sábado es el día 6";
+                case 7 -> "El Domingo es el día de descanso.";
+                default -> "Error: El número introducido no es válido.";
+            };
+
+            // Para una mayor independencia y favorecer la reutilización de código, imprimimos por pantalla fuera del switch.
+            System.out.println(nombreDia);
+
             // --- 4. CIERRE DE RECURSOS ---
             // Se cierra el Scanner para liberar los recursos del sistema.
             // Es una buena práctica hacerlo siempre que se termina de usar.
