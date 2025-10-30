@@ -9,7 +9,7 @@
  * 
  */
 
-package unidad4;
+package unidad4_funciones;
 
 public class A03_DivisoresPrimos {
     

@@ -1,7 +1,7 @@
 /*Ejercicio 4.- Crear una aplicación que solicite al usuario una fecha (día, mes y año) y muestre la fecha 
 correspondiente al día siguiente. Febrero tiene 28 días.*/
 
-package unidad2;
+package unidad2_condicionales;
 
 import java.util.Scanner;
 

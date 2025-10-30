@@ -1,6 +1,6 @@
 /*Ejercicio 2.- Pedir dos números y mostrarlos ordenados de forma decreciente (Operador ternario). */
 
-package unidad2;
+package unidad2_condicionales;
 
 import java.util.Scanner;
 
