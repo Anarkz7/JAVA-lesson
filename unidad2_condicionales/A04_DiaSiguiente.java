@@ -65,10 +65,7 @@ public class A04_DiaSiguiente {
         
 
         // --- 3. LÓGICA PARA DETERMINAR DÍAS DEL MES ---
-        // Se utiliza una expresión switch (disponible desde Java 14) por varias ventajas:
-        // 1. Es más concisa y legible que la sintaxis clásica.
-        // 2. Es más segura, ya que elimina el riesgo de errores al no necesitar 'break'.
-        // 3. Permite agrupar múltiples 'case' en una sola línea, reduciendo el código.
+
         diasDelMes = switch (month) {
             case 2 -> 28;
             case 4, 6, 9, 11 -> 30;

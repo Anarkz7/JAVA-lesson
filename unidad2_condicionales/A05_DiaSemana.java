@@ -26,17 +26,17 @@ public class A05_DiaSemana {
         // --- 1. INICIALIZACIÓN DE HERRAMIENTAS ---
         // Se crea un objeto Scanner para leer la entrada del teclado del usuario.
         Scanner sc = new Scanner(System.in);
+
         // --- 2. ENTRADA DE DATOS ---
-        // Se solicita al usuario que introduzca el número y se muestra un mensaje claro.
+        // Se solicita al usuario que introduzca el número y se muestra un mensaje claro, Se lee el valor entero introducido y se guarda en la variable 'dia'.
+        
         System.out.print("Introduce un número del 1 al 7: ");
-        // Se lee el valor entero introducido y se guarda en la variable 'dia'.
         int dia = sc.nextInt();
         String nombreDia;
+
         // --- 3. LÓGICA DE PROCESAMIENTO Y SALIDA ---
         // Se utiliza una estructura 'switch' para evaluar el valor de la variable 'dia'.
-        // Esta estructura es ideal para comparaciones de igualdad con múltiples casos.
-        // Se usa la sintaxis de flecha (->) introducida en Java 14, que es más concisa
-        // y no requiere de la palabra 'break' pero sí un 'default'.
+
             nombreDia = switch (dia) {
                 case 1 -> "El Lunes es el día 1.";
                 case 2 -> "El Martes es el día 2.";
@@ -52,8 +52,6 @@ public class A05_DiaSemana {
             System.out.println(nombreDia);
 
             // --- 4. CIERRE DE RECURSOS ---
-            // Se cierra el Scanner para liberar los recursos del sistema.
-            // Es una buena práctica hacerlo siempre que se termina de usar.
             sc.close();
     }
 }

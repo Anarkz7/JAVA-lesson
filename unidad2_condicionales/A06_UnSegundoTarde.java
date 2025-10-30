@@ -71,7 +71,7 @@ public class A06_UnSegundoTarde {
 
         } else {
             // --- 5. SALIDA RESULTADOS
-            System.out.printf("Error: introduce una hora válida.");
+            System.out.printf("La hora introducida no es válida, inténtalo de nuevo.");
         }
         
         
