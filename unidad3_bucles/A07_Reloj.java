@@ -1,4 +1,4 @@
-package unidad2_condicionales;
+package unidad3_bucles;
 
 /* Actividad de Aula 7 - Reloj. Requisitos de finalización.
 Escribe un programa que incremente la hora de un reloj. Se pide por teclado la hora, 
@@ -64,6 +64,28 @@ public class A07_Reloj {
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
+
+        // Declaración de variables antes de los bucles de petición de datos y comprobación de datos.
+        int seg, min, hora, incremento;
+
+        //1. bucle para los segundos.
+
+        do { 
+            System.out.println("Introduce los segundos (0-59): ");
+            seg = sc.nextInt();
+            if (seg < 0 || seg > 59) {
+                System.out.println("Error: los segundos deben estar entre 0 y 59.");
+            }
+        } while (true);
+
+        // 2. bucle para los minutos
+        do { 
+            System.out.println("Introduce los minutos (0-59): ");
+            min = sc.nextInt();
+            if (min < 0 && min > 59) {
+                System.out.println("Error: los minutos deben estar entre 0 y 59.");
+            }
+        } while (seg < 0 || seg > 59);
         
         System.out.print("Introduce los segundos: ");
         int seg = sc.nextInt();
@@ -87,6 +109,16 @@ public class A07_Reloj {
 
         System.out.printf("La hora introducida es %02d:%02d:%02d con un incremento de %d segundos la hora final es %02d:%02d:%02d.", 
         hora, min, seg, incremento, hh, mm, ss);
+
+        int inc_hh = incremento / 3600;
+        int inc_mm = (incremento % (60*60)) / 60;
+        int inc_ss = incremento % 60;
+
+        int inc_dd = inc_hh / 24; // 223 / 24 = 9 días
+        int inc_hh_final = inc_hh % 24;  // 223 % 24 = 7 horas restantes
+        
+        System.out.printf("\nEl incremento de %d segundos se traduce en: %d días, %d horas, %d minutos y %d segundos. \nGraasias!", 
+            incremento, inc_dd, inc_hh, inc_mm, inc_ss);
 
 
     }

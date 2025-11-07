@@ -42,8 +42,8 @@ public class A05_DiaSemana {
                 case 2 -> "El Martes es el día 2.";
                 case 3 -> "El Miércoles es el día 3.";
                 case 4 -> "El Jueves es el día 4";
-                case 5 -> "El Viernes es el día 5";
-                case 6 -> "El Sábado es el día 6";
+                case 5 -> "El Viernes es el día 5.";
+                case 6 -> "El Sábado es el día 6.";
                 case 7 -> "El Domingo es el día de descanso.";
                 default -> "Error: El número introducido no es válido.";
             };
