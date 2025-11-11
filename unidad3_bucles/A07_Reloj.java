@@ -82,11 +82,12 @@ public class A07_Reloj {
         do { 
             System.out.println("Introduce los minutos (0-59): ");
             min = sc.nextInt();
-            if (min < 0 && min > 59) {
+            if (min < 0 || min > 59) {
                 System.out.println("Error: los minutos deben estar entre 0 y 59.");
             }
-        } while (seg < 0 || seg > 59);
+        } while (true);
         
+        /* 
         System.out.print("Introduce los segundos: ");
         int seg = sc.nextInt();
         System.out.print("Introduce los minutos: ");
@@ -95,6 +96,7 @@ public class A07_Reloj {
         int hora = sc.nextInt();
         System.out.print("Introduce el incremento: ");
         int incremento = sc.nextInt();
+        */
 
         // se calculan cuántos segundos son las horas, los minutos y sumamos los segundos totales.
         // se sume el incremento para dar la siguiente hora.
