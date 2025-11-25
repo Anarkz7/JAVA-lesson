@@ -21,11 +21,13 @@ public class Microsoft {
     static Scanner sc = new Scanner(System.in);
 
     
+    // --- 2. MAIN --- 
     public static void main(String[] args) {
-        // --- 2. MAIN --- 
+        
 
         System.out.println("Sistema de gestión Microsoft iniciado...");
         // El main solo da la orden de arranque
+
         ejecutarMenuPrincipal();
     }
 
@@ -48,9 +50,7 @@ public class Microsoft {
         System.out.print("--> Elige una opción: ");
     }
 
-     /**
-     * Controla el flujo principal del programa: bucle y switch.
-     */
+    //Controla el flujo principal del programa: bucle y switch.
 
     public static void ejecutarMenuPrincipal() {
         int opcion; 
@@ -61,11 +61,10 @@ public class Microsoft {
 
             switch (opcion) {
                 case 1:
-                    //System.out.println("Función Matriz IA (Pendiente...)");
                     calcularMatrizIA();
                     break;
                 case 2:
-                    ingresarUsuario(); // Ya la tenemos hecha
+                    ingresarUsuario();
                     break;
                 case 3:
                     mostrarPorNiveles();
@@ -116,7 +115,7 @@ public class Microsoft {
 
         // 3. Recorremos la matriz para sumar
         // i = filas, j = columnas
-        for (int i = 0; i < tiempos.length; i++) {
+        for (int i = 0; i < tiempos.length; i++) { //i = filas j = columnas
             for (int j = 0; j < tiempos[i].length; j++) {
                 // Acumulamos el valor en la posición correspondiente a su columna
                 sumaColumnas[j] += tiempos[i][j];
